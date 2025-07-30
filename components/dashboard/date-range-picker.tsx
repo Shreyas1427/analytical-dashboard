@@ -38,7 +38,7 @@ export function DateRangePicker({ dateRange, onDateRangeChange, className }: Dat
             variant="outline"
             size="sm"
             className={cn(
-              'justify-start text-left font-normal gap-1 sm:gap-2 min-w-[120px] sm:min-w-[240px] px-2 sm:px-3',
+              'justify-start text-left font-normal gap-1 sm:gap-2 lg:gap-2 min-w-[120px] sm:min-w-[200px] lg:min-w-[280px] px-2 sm:px-3 lg:px-4',
               !dateRange && 'text-muted-foreground'
             )}
           >
@@ -46,11 +46,11 @@ export function DateRangePicker({ dateRange, onDateRangeChange, className }: Dat
             {dateRange?.from ? (
               dateRange.to ? (
                 <div className="flex items-center gap-1 sm:gap-2">
-                  <span className="text-xs sm:text-sm truncate">
+                  <span className="text-xs sm:text-sm lg:text-sm truncate">
                     <span className="sm:hidden">
                       {format(dateRange.from, 'MMM dd')} - {format(dateRange.to, 'MMM dd')}
                     </span>
-                    <span className="hidden sm:inline">
+                    <span className="hidden sm:inline lg:inline">
                       {format(dateRange.from, 'LLL dd, y')} - {format(dateRange.to, 'LLL dd, y')}
                     </span>
                   </span>
@@ -64,15 +64,15 @@ export function DateRangePicker({ dateRange, onDateRangeChange, className }: Dat
                   )}
                 </div>
               ) : (
-                <span className="text-xs sm:text-sm">
+                <span className="text-xs sm:text-sm lg:text-sm">
                   <span className="sm:hidden">{format(dateRange.from, 'MMM dd')}</span>
-                  <span className="hidden sm:inline">{format(dateRange.from, 'LLL dd, y')}</span>
+                  <span className="hidden sm:inline lg:inline">{format(dateRange.from, 'LLL dd, y')}</span>
                 </span>
               )
             ) : (
-              <span className="text-xs sm:text-sm">
+              <span className="text-xs sm:text-sm lg:text-sm">
                 <span className="sm:hidden">Date range</span>
-                <span className="hidden sm:inline">Pick a date range</span>
+                <span className="hidden sm:inline lg:inline">Pick a date range</span>
               </span>
             )}
           </Button>

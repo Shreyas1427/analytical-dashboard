@@ -35,38 +35,38 @@ export function AIInsights({ revenueChange, usersChange, conversionsChange }: AI
       
       <CardContent className="relative p-4 sm:p-6 h-full flex flex-col">
         <div className="flex items-start gap-3 sm:gap-4 flex-1">
-          <div className="p-1.5 sm:p-3 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl shadow-lg flex-shrink-0">
-            <Bot className="h-4 w-4 sm:h-6 sm:w-6 text-white" />
+          <div className="p-1.5 sm:p-3 lg:p-3 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl shadow-lg flex-shrink-0">
+            <Bot className="h-4 w-4 sm:h-6 sm:w-6 lg:h-6 lg:w-6 text-white" />
           </div>
           
           <div className="flex-1 min-w-0">
-            <h3 className="text-sm sm:text-lg font-semibold text-foreground mb-1 sm:mb-2">
+            <h3 className="text-sm sm:text-lg lg:text-xl font-semibold text-foreground mb-1 sm:mb-2 lg:mb-3">
               AI Insights
             </h3>
-            <p className="text-xs sm:text-sm text-muted-foreground">
+            <p className="text-xs sm:text-sm lg:text-base text-muted-foreground">
               Real-time performance analysis
             </p>
             
-            <div className="mt-2 sm:mt-4 space-y-1 sm:space-y-2">
+            <div className="mt-2 sm:mt-4 lg:mt-6 space-y-1 sm:space-y-2 lg:space-y-3">
               <div className="flex items-center gap-1.5 sm:gap-2">
                 {getChangeIcon(revenueChange)}
-                <span className={cn("text-xs sm:text-sm font-medium", getInsightColor(revenueChange))}>
+                <span className={cn("text-xs sm:text-sm lg:text-base font-medium", getInsightColor(revenueChange))}>
                   Revenue {getChangeText(revenueChange)}
                 </span>
               </div>
               
               <div className="flex items-center gap-1.5 sm:gap-2">
                 {getChangeIcon(usersChange)}
-                <span className={cn("text-xs sm:text-sm font-medium", getInsightColor(usersChange))}>
+                <span className={cn("text-xs sm:text-sm lg:text-base font-medium", getInsightColor(usersChange))}>
                   Users {getChangeText(usersChange)}
                 </span>
               </div>
               
               <div className="flex items-center gap-1.5 sm:gap-2">
                 {getChangeIcon(conversionsChange)}
-                <span className={cn("text-xs sm:text-sm font-medium", getInsightColor(conversionsChange))}>
+                <span className={cn("text-xs sm:text-sm lg:text-base font-medium", getInsightColor(conversionsChange))}>
                   <span className="sm:hidden">Conv.</span>
-                  <span className="hidden sm:inline">Conversions</span>
+                  <span className="hidden sm:inline lg:inline">Conversions</span>
                   {' '}{getChangeText(conversionsChange)}
                 </span>
               </div>
