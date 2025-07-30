@@ -182,10 +182,10 @@ export default function Dashboard() {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2 sm:gap-3">
               <div className="p-1.5 sm:p-2 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl shadow-lg">
-                <BarChart3 className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
+                <BarChart3 className="h-4 w-4 sm:h-6 sm:w-6 text-white" />
               </div>
               <div>
-                <h1 className="text-lg sm:text-xl lg:text-2xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">
+                <h1 className="text-base sm:text-xl lg:text-2xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">
                   ADmyBRAND Insights
                 </h1>
                 <p className="text-xs sm:text-sm text-muted-foreground">
@@ -211,7 +211,7 @@ export default function Dashboard() {
                 onClick={refreshData}
                 disabled={isRefreshing}
                 className={cn(
-                  "gap-1 sm:gap-2 transition-all duration-300",
+                  "gap-1 sm:gap-2 transition-all duration-300 px-2 sm:px-3",
                   isRefreshing && "animate-pulse"
                 )}
               >
@@ -225,9 +225,9 @@ export default function Dashboard() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 py-4 sm:py-6 space-y-6 sm:space-y-8">
+      <div className="container mx-auto px-3 sm:px-6 py-3 sm:py-6 space-y-4 sm:space-y-8">
         {/* Metrics Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
           <MetricCard
             title="Total Revenue"
             value={metrics?.revenue || 0}
@@ -255,17 +255,17 @@ export default function Dashboard() {
         </div>
 
         {/* Charts Section */}
-        <div className="space-y-6 sm:space-y-8">
+        <div className="space-y-4 sm:space-y-8">
           {/* Charts Row 1 - Revenue and Traffic */}
-          <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
             {revenueData && <RevenueChart data={revenueData} />}
             {trafficData && <TrafficChart data={trafficData} />}
           </div>
 
           {/* Charts Row 2 - User Chart and Summary Cards */}
-          <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
             {/* User Chart - Full height on mobile, 1/3 width on desktop */}
-            <div className="xl:col-span-1">
+            <div className="lg:col-span-1">
               {userData && (
                 <UserChart 
                   data={userData} 
@@ -276,18 +276,18 @@ export default function Dashboard() {
             </div>
             
             {/* Summary Cards - Stacked on mobile, 2/3 width on desktop */}
-            <div className="xl:col-span-2 grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+            <div className="lg:col-span-2 grid grid-cols-1 gap-4 sm:gap-6 lg:grid-cols-2">
               {/* Performance Summary */}
               <div className="flex items-center justify-center">
-                <div className="text-center space-y-3 sm:space-y-4 p-4 sm:p-6 lg:p-8 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-950/20 dark:to-purple-950/20 rounded-2xl border border-blue-200/50 dark:border-blue-800/50 w-full h-full">
-                  <div className="p-3 sm:p-4 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full w-12 h-12 sm:w-16 sm:h-16 mx-auto flex items-center justify-center">
-                    <TrendingUp className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
+                <div className="text-center space-y-2 sm:space-y-4 p-3 sm:p-6 lg:p-8 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-950/20 dark:to-purple-950/20 rounded-2xl border border-blue-200/50 dark:border-blue-800/50 w-full h-full">
+                  <div className="p-2 sm:p-4 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full w-10 h-10 sm:w-16 sm:h-16 mx-auto flex items-center justify-center">
+                    <TrendingUp className="h-5 w-5 sm:h-8 sm:w-8 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-base sm:text-lg font-semibold text-foreground">
+                    <h3 className="text-sm sm:text-lg font-semibold text-foreground">
                       Performance Summary
                     </h3>
-                    <p className="text-xs sm:text-sm text-muted-foreground max-w-md">
+                    <p className="text-xs sm:text-sm text-muted-foreground max-w-md mt-1">
                       Your campaigns are performing exceptionally well this month with significant growth across all key metrics. Revenue is up 12.5% and conversions increased by 15.3%.
                     </p>
                   </div>

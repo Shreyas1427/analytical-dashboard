@@ -38,7 +38,7 @@ export function DateRangePicker({ dateRange, onDateRangeChange, className }: Dat
             variant="outline"
             size="sm"
             className={cn(
-              'justify-start text-left font-normal gap-1 sm:gap-2 min-w-[200px] sm:min-w-[240px]',
+              'justify-start text-left font-normal gap-1 sm:gap-2 min-w-[120px] sm:min-w-[240px] px-2 sm:px-3',
               !dateRange && 'text-muted-foreground'
             )}
           >
@@ -46,23 +46,34 @@ export function DateRangePicker({ dateRange, onDateRangeChange, className }: Dat
             {dateRange?.from ? (
               dateRange.to ? (
                 <div className="flex items-center gap-1 sm:gap-2">
-                  <span className="text-xs sm:text-sm">
-                    {format(dateRange.from, 'LLL dd, y')} - {format(dateRange.to, 'LLL dd, y')}
+                  <span className="text-xs sm:text-sm truncate">
+                    <span className="sm:hidden">
+                      {format(dateRange.from, 'MMM dd')} - {format(dateRange.to, 'MMM dd')}
+                    </span>
+                    <span className="hidden sm:inline">
+                      {format(dateRange.from, 'LLL dd, y')} - {format(dateRange.to, 'LLL dd, y')}
+                    </span>
                   </span>
                   {dateRange && (
                     <button
                       onClick={handleClear}
-                      className="ml-auto hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full p-1 transition-colors"
+                      className="ml-auto hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full p-0.5 sm:p-1 transition-colors flex-shrink-0"
                     >
-                      <X className="h-3 w-3" />
+                      <X className="h-2.5 w-2.5 sm:h-3 sm:w-3" />
                     </button>
                   )}
                 </div>
               ) : (
-                <span className="text-xs sm:text-sm">{format(dateRange.from, 'LLL dd, y')}</span>
+                <span className="text-xs sm:text-sm">
+                  <span className="sm:hidden">{format(dateRange.from, 'MMM dd')}</span>
+                  <span className="hidden sm:inline">{format(dateRange.from, 'LLL dd, y')}</span>
+                </span>
               )
             ) : (
-              <span className="text-xs sm:text-sm">Pick a date range</span>
+              <span className="text-xs sm:text-sm">
+                <span className="sm:hidden">Date range</span>
+                <span className="hidden sm:inline">Pick a date range</span>
+              </span>
             )}
           </Button>
         </PopoverTrigger>

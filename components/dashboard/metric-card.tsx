@@ -53,36 +53,37 @@ export function MetricCard({ title, value, change, icon, className }: MetricCard
       
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 sm:pb-3">
         <div className="space-y-1">
-          <p className="text-xs sm:text-sm font-medium text-muted-foreground tracking-wide">
+          <p className="text-xs font-medium text-muted-foreground tracking-wide">
             {title}
           </p>
-          <p className="text-xl sm:text-2xl font-bold text-foreground">
+          <p className="text-lg sm:text-2xl font-bold text-foreground">
             {formattedValue}
           </p>
         </div>
         <div className={cn(
-          'p-2 sm:p-3 rounded-xl transition-colors duration-300',
+          'p-1.5 sm:p-3 rounded-xl transition-colors duration-300',
           'bg-gradient-to-br from-blue-500/10 to-purple-500/10',
           'group-hover:from-blue-500/20 group-hover:to-purple-500/20'
         )}>
-          <Icon className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600 dark:text-blue-400" />
+          <Icon className="h-3 w-3 sm:h-5 sm:w-5 text-blue-600 dark:text-blue-400" />
         </div>
       </CardHeader>
       
       <CardContent className="pt-0">
-        <div className="flex items-center space-x-1 sm:space-x-2">
+        <div className="flex items-center space-x-1">
           <div className={cn(
             'flex items-center space-x-1 text-xs font-medium',
             isPositive ? 'text-emerald-600 dark:text-emerald-400' : 'text-red-600 dark:text-red-400'
           )}>
             {isPositive ? (
-              <TrendingUp className="h-3 w-3" />
+              <TrendingUp className="h-2.5 w-2.5 sm:h-3 sm:w-3" />
             ) : (
-              <TrendingDown className="h-3 w-3" />
+              <TrendingDown className="h-2.5 w-2.5 sm:h-3 sm:w-3" />
             )}
             <span>{Math.abs(change).toFixed(1)}%</span>
           </div>
-          <span className="text-xs text-muted-foreground">vs last month</span>
+          <span className="text-xs text-muted-foreground hidden sm:inline">vs last month</span>
+          <span className="text-xs text-muted-foreground sm:hidden">vs last</span>
         </div>
       </CardContent>
     </Card>
