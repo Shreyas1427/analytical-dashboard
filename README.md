@@ -98,7 +98,7 @@ npm start
 
 ## ☁️ Deployment
 
-The ADmyBRAND Insights dashboard is live and accessible via Vercel:
+The Analytical Insights dashboard is live and accessible via Vercel:
 
 🔗 **Live Demo:** [https://analytical-dashboard-theta.vercel.app/](https://analytical-dashboard-theta.vercel.app/)
 
